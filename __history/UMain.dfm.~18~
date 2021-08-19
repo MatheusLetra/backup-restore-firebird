@@ -1,0 +1,95 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 299
+  ClientWidth = 635
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 635
+    Height = 144
+    Align = alClient
+    TabOrder = 0
+    ExplicitLeft = 232
+    ExplicitTop = 152
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object SpeedButton1: TSpeedButton
+      Left = 311
+      Top = 23
+      Width = 23
+      Height = 22
+      OnClick = SpeedButton1Click
+    end
+    object Label1: TLabel
+      Left = 24
+      Top = 5
+      Width = 70
+      Height = 13
+      Caption = 'Banco Origem:'
+    end
+  end
+  object MessagesBackup: TMemo
+    Left = 0
+    Top = 144
+    Width = 635
+    Height = 155
+    Align = alBottom
+    TabOrder = 1
+    ExplicitLeft = 8
+    ExplicitTop = 176
+  end
+  object BtnIniciar: TPanel
+    Left = 450
+    Top = 4
+    Width = 185
+    Height = 41
+    Caption = 'Iniciar Backup/Restore'
+    TabOrder = 2
+    OnClick = BtnIniciarClick
+  end
+  object edOrigem: TEdit
+    Left = 24
+    Top = 24
+    Width = 281
+    Height = 21
+    Enabled = False
+    TabOrder = 3
+  end
+  object Backup: TFDIBBackup
+    DriverLink = DriverLink
+    OnProgress = BackupProgress
+    Verbose = True
+    Left = 560
+    Top = 56
+  end
+  object Restore: TFDIBRestore
+    DriverLink = DriverLink2
+    OnProgress = RestoreProgress
+    Left = 560
+    Top = 112
+  end
+  object DriverLink: TFDPhysFBDriverLink
+    Left = 568
+    Top = 176
+  end
+  object DriverLink2: TFDPhysFBDriverLink
+    Left = 568
+    Top = 232
+  end
+  object SelecionaBanco: TOpenDialog
+    Left = 504
+    Top = 64
+  end
+end
